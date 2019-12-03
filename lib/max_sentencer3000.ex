@@ -1,4 +1,4 @@
-defmodule MaxSentencer3000 do
+defmodule MS3000 do
   @moduledoc """
   Documentation for MaxSentencer3000.
   """
