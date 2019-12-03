@@ -15,7 +15,6 @@ defmodule MS3000.Parser do
 
     unfiltered_regex_result = Regex.scan(regex, without_new_lines)
     regex_result = Enum.map(unfiltered_regex_result, fn matches -> List.first(matches) end)
-    IO.inspect(regex_result)
 
     unfiltered_notsumed_regex_result_indexes =
       Regex.scan(regex, without_new_lines, return: :index)
@@ -24,8 +23,6 @@ defmodule MS3000.Parser do
       Enum.map(unfiltered_notsumed_regex_result_indexes, fn matches -> List.first(matches) end)
 
     regex_result_indexes = Enum.map(notsumed_regex_result_indexes, fn {a, b} -> {a, a + b} end)
-
-    redo_indexes = fn a, b -> a + b end
 
     Enum.zip([regex_result, regex_result_indexes])
   end
