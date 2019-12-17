@@ -3,16 +3,20 @@ defmodule MS3000 do
   Documentation for MaxSentencer3000.
   """
 
+  alias MS3000.Parser
+
   @doc """
-  Hello world.
+  Locates people, places and organizations in the sentence and prints them on console in
+  rdf format.
 
   ## Examples
 
-      iex> MaxSentencer3000.hello()
-      :world
+      iex> MaxSentencer3000.analyze_sentence("Elvis Presley was a thing.")
+      :ok
 
   """
-  def hello do
-    :world
+  def analyze_sentence(sentence, _opts \\ []) do
+    sentence
+    |> Parser.parse()
   end
 end
