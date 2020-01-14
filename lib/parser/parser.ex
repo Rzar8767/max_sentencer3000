@@ -1,11 +1,22 @@
 defmodule MS3000.Parser do
-  def test() do
-    string = """
-    Florence May Harding studied at a school in Sydney, and with Douglas Robert Dundas, but in effect had no formal training in either botany or art.
-    """
+  @moduledoc """
+  Add description for the module in few words here Filip.
 
-    parse(string)
-  end
+  """
+
+  @doc """
+  Add description here Filip.
+
+  ## Examples
+
+      iex> sentence = "Florence May Harding studied at a school in Sydney, and with Douglas Robert Dundas, but in effect had no formal training in either botany or art."
+      iex> MS3000.Parser.parse(sentence)
+      [
+        {"Florence May Harding", {0, 20}},
+        {"Sydney", {44, 50}},
+        {"Douglas Robert Dundas", {61, 82}}
+      ]
+  """
 
   def parse(string) do
     without_new_lines = String.replace(string, "\n", "")

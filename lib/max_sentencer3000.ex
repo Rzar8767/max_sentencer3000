@@ -9,13 +9,13 @@ defmodule MS3000 do
   alias MS3000.DbpediaQuery
 
   @doc """
-  Locates people, places and organizations in the sentence and returns a rdf document.
+  Locates people, places and organizations in the sentence and prints a rdf document.
 
 
   ## Examples
 
-      ie> MS3000.analyze_sentence("Elvis Presley was a thing.")
-      <rfc>
+      iex> MS3000.analyze_sentence("Elvis Presley was a thing.")
+      :ok
 
   """
   def analyze_sentence(sentence, _opts \\ []) do
@@ -26,11 +26,14 @@ defmodule MS3000 do
       Logger.debug("Known entities: #{inspect(known_entities)}")
       Logger.debug("Unknown entities: #{inspect(unknown_entities)}")
       Logger.debug("Response: #{response}")
+      :ok
     else
       error ->
         {:error, error}
         |> inspect
         |> (&Logger.debug("Error: #{&1}")).()
+
+        {:error, error}
     end
   end
 
