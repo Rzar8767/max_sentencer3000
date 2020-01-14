@@ -1,6 +1,9 @@
 defmodule MS3000.Entity do
   defstruct name: nil, class: nil, indexes: nil
 
+  @moduledoc """
+  `Struct` representing an `Entity`.
+  """
   @type t :: %__MODULE__{
           name: String.t(),
           class: Atom.t(),

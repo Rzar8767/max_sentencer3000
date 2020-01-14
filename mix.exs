@@ -21,6 +21,7 @@ defmodule MaxSentencer3000.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
+      {:ex_doc, "~> 0.21", only: :dev, runtime: false},
       {:sparql_client, "~> 0.2.2"},
       {:hackney, "~> 1.15"}
       # {:dep_from_hexpm, "~> 0.3.0"},

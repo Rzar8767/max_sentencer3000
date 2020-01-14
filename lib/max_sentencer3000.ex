@@ -7,12 +7,12 @@ defmodule MS3000 do
   alias MS3000.DbpediaQuery
 
   @doc """
-  Locates people, places and organizations in the sentence and prints them on console in
-  rdf format.
+  Locates people, places and organizations in the sentence and returns a rdf document.
+
 
   ## Examples
 
-      iex> MS3000.analyze_sentence("Elvis Presley was a thing.")
+      ie> MS3000.analyze_sentence("Elvis Presley was a thing.")
       <rfc>
 
   """
