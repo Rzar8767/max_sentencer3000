@@ -1,4 +1,6 @@
 defmodule MS3000 do
+  require Logger
+
   @moduledoc """
   Documentation for MaxSentencer3000.
   """
@@ -21,13 +23,14 @@ defmodule MS3000 do
          entities <- get_entities(sentence),
          {known_entities, unknown_entities} <- split_entities(entities),
          {:ok, response} <- create_response(sentence_info, known_entities) do
-      IO.puts("Known entities: #{inspect known_entities}")
-      IO.puts("Unknown entities: #{inspect unknown_entities}")
-      IO.puts("Response: #{response}")
+      Logger.debug("Known entities: #{inspect(known_entities)}")
+      Logger.debug("Unknown entities: #{inspect(unknown_entities)}")
+      Logger.debug("Response: #{response}")
     else
       error ->
         {:error, error}
-        |> IO.inspect()
+        |> inspect
+        |> (&Logger.debug("Error: #{&1}")).()
     end
   end
 
