@@ -1,4 +1,13 @@
 defmodule MS3000.Formatter do
+   @moduledoc """
+  This module is responsible for transforming known entities into RDF xml.
+
+  """
+
+  @doc """
+  In case of list of entities being empty, it returns an error, otherwise it returns RDF xml.
+  """
+
   def create_response(_sentence, []) do
     {:error, :no_recognized_entities}
   end

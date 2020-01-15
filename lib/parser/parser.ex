@@ -1,11 +1,11 @@
 defmodule MS3000.Parser do
   @moduledoc """
-  Add description for the module in few words here Filip.
+  This module parses the initial sentence.
 
   """
 
   @doc """
-  Add description here Filip.
+  This function is responsible for parsing raw text to the format of table with tuples, each containing matched sentence, an index of beginning and ending of the sentence.
 
   ## Examples
 
