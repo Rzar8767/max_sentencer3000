@@ -22,7 +22,7 @@ defmodule MS3000.Parser do
     without_new_lines = String.replace(string, "\n", "")
 
     regex =
-      ~r/(?!((A)?(The)?(At)?(Over)?(Under)?(Until)?(Through)?(Across)?(With)?(In)?\s))([A-Z]+[a-zA-Z]+)+([\s]([A-Z][a-zA-Z]+))*/
+      ~r/(?!((A)?(The)?(At)?(Over)?(Under)?(Until)?(Through)?(Across)?(With)?(In)?\s))([A-ZĄĆĘŁŃÓŚŹŻ]+[a-zA-Ząćęłńóśźż]+)+(,?(\sof)?[\s]([A-ZĄĆĘŁŃÓŚŹŻ][ąćęłńóśźża-zA-Z]+))*/
 
     unfiltered_regex_result = Regex.scan(regex, without_new_lines)
     regex_result = Enum.map(unfiltered_regex_result, fn matches -> List.first(matches) end)

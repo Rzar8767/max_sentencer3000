@@ -11,5 +11,12 @@ Basic test of named entity identification in Elixir language.
 In the project's directory run `mix docs` command.
 You can view the generated documentation by opening the "doc/index.html" file in your favorite browser.
 
+# How to run
+Download Elixir v1.8+
+In project's root directory type "mix deps.get" to get the dependencies.
+To run project type "iex -S mix run" (in Windows' case is it may require to run iex.bat instead).
+Next type MS3000.analyze_sentence(text), where 'text' is a sentence you wish to get the rdf document for.
+
+
 
 
